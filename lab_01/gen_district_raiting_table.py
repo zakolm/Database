@@ -2,7 +2,7 @@
 
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.pdfpage import PDFPage
-from pdfminer.converter import XMLConverter, HTMLConverter, TextConverter
+from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
 import io
 
@@ -80,7 +80,7 @@ def pdfparser(data):
     # Process each page contained in the document.
     for page in PDFPage.get_pages(fp):
         interpreter.process_page(page)
-        data =  retstr.getvalue()
+        data = retstr.getvalue()
     return data
 
 
@@ -90,5 +90,8 @@ def gen_district_raiting_table(cell_of_district_db):
     """
     fieldnames = ['Id', 'AreaName', 'District', 'Rang']
     data_string = pdfparser('example.pdf')
+    data_string.replace(',', '')
     data_for_csv = from_string_to_csv(data_string, cell_of_district_db)
+    for i in data_for_csv:
+        i[1] = i[1].replace(',', '')
     return fieldnames, data_for_csv

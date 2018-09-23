@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 import csv
 
+
 def csv_writer(path, fieldnames, data):
-    """
+    """!
     Функция для записи в файл csv
     path - путь до файла
     fieldnames - название столбцов
     data - список из списков
     """
-    with open(path, "w", newline='') as out_file:
+    with open(path, "w", encoding='utf-16', newline='') as out_file:
         '''
         out_file - выходные данные в виде объекта
         delimiter - разделитель :|;

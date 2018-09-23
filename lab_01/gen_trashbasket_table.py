@@ -1,7 +1,17 @@
 # python3.6
 
+import random
 
-def gen_trashbasket_table(districts):
+
+def chooze(a, b):
+    res = []
+    for i in range(len(b)):
+        if b[i][2] == a:
+            res.append(b[i][0])
+    return res[random.randint(0, len(res)-1)]
+
+
+def gen_trashbasket_table(districts, area):
     district = dict(districts)
     district = dict(zip(district.values(), district.keys()))
     fieldnames = ['Id', 'Area', 'District']
@@ -16,7 +26,8 @@ def gen_trashbasket_table(districts):
             if i in district:
                 region = i
             else:
-                csv.append([index, i, district[region]])
-                print(index, i, district[region])
+                res = chooze(district[region], area)
+                csv.append([index, i, res])
+                # print(index, i, res)
                 index += 1
     return fieldnames, csv

@@ -1,6 +1,7 @@
 # python3.6
 
 import docx
+from functools import reduce
 
 
 def gen_elements():
@@ -16,7 +17,9 @@ def gen_elements():
                 if cell.text == '':
                     arr.append('')
                 else:
-                    arr.append(cell.text.replace('\xa0', ''))
+                    repls = ('\xa0', ''), (',', '')
+                    arr.append(reduce(lambda a, kv: a.replace(*kv), repls,
+                                      cell.text))
             arr.insert(0, i)
             cell_end.append(arr)
             i += 1
