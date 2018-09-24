@@ -7,7 +7,7 @@ from functools import reduce
 def gen_elements():
     fieldnames = ['Id', 'ElementName', 'string_sertificate', 'id_sertificate']
     cell_end = []
-    doc = docx.Document('DATAFILE1.docx')
+    doc = docx.Document('DATAFILE.docx')
     tables = doc.tables
     i = 1
     for table in tables:

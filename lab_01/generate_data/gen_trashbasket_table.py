@@ -15,7 +15,7 @@ def gen_trashbasket_table(districts, area):
     district = dict(districts)
     district = dict(zip(district.values(), district.keys()))
     fieldnames = ['Id', 'Area', 'District']
-    file = open('area1.txt', 'r+')
+    file = open('area.txt', 'r+')
     text = file.read().strip().split('\n')
     file.close()
     csv = []
