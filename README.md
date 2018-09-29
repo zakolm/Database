@@ -4,4 +4,5 @@
 
 | Number | Issued | Status | On GitHub | Exercise |
 |------|---|------|----------|---|
-| :one: | :white_check_mark: | :x: | :x: | :x: |
+| :one: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: |
+| :two: | :x: | :x: | :x: | :x: |
