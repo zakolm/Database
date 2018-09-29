@@ -1,4 +1,4 @@
--- Create a new database called 'TitanicDB'
+-- Create a new database called 'EcologyDB'
 -- Connect to the 'master' database to run this snippet
 USE master
 GO
@@ -15,35 +15,21 @@ GO
 USE EcologyDB
 GO
 
--- Create a new table called 'T' in schema 'dbo'
+-- Create a new table
 -- Drop the table if it already exists
-IF OBJECT_ID('district', 'U') IS NOT NULL
-DROP TABLE district
+IF OBJECT_ID('link', 'U') IS NOT NULL
+DROP TABLE link
 GO
 -- Create the table in the specified schema
-CREATE TABLE district
+CREATE TABLE link
 (
-    Id INT NOT NULL, 
-    DistrictName NVARCHAR(85) NOT NULL,
+    Id  INT NOT NULL,
+    id_trashbasket INT NOT NULL,
+	id_element INT NOT NULL,
 );
 GO
 
--- Create a new table called 'S' in schema 'dbo'
--- Drop the table if it already exists
-IF OBJECT_ID('area', 'U') IS NOT NULL
-DROP TABLE area                
-GO
--- Create the table in the specified schema
-CREATE TABLE area
-(
-    Id INT NOT NULL,
-    AreaName NVARCHAR(85) NOT NULL,
-    District INT NOT NULL,
-	Rang INT NOT NULL
-);
-GO
-
--- Create a new table called 'P' in schema 'dbo'
+-- Create a new table
 -- Drop the table if it already exists
 IF OBJECT_ID('element', 'U') IS NOT NULL
 DROP TABLE element
@@ -58,7 +44,7 @@ CREATE TABLE element
 );
 GO
 
--- Create a new table called 'PTS' in schema 'dbo'
+-- Create a new table
 -- Drop the table if it already exists
 IF OBJECT_ID('trashbasket', 'U') IS NOT NULL
 DROP TABLE trashbasket
@@ -72,16 +58,30 @@ CREATE TABLE trashbasket
 );
 GO
 
--- Create a new table called 'PTS' in schema 'dbo'
+-- Create a new table
 -- Drop the table if it already exists
-IF OBJECT_ID('link', 'U') IS NOT NULL
-DROP TABLE link
+IF OBJECT_ID('area', 'U') IS NOT NULL
+DROP TABLE area                
 GO
 -- Create the table in the specified schema
-CREATE TABLE link
+CREATE TABLE area
 (
-    Id  INT NOT NULL,
-    id_trashbasket INT NOT NULL,
-	id_element INT NOT NULL,
+    Id INT NOT NULL,
+    AreaName NVARCHAR(85) NOT NULL,
+    District INT NOT NULL,
+	Rang INT NOT NULL
+);
+GO
+
+-- Create a new table
+-- Drop the table if it already exists
+IF OBJECT_ID('district', 'U') IS NOT NULL
+DROP TABLE district
+GO
+-- Create the table in the specified schema
+CREATE TABLE district
+(
+    Id INT NOT NULL, 
+    DistrictName NVARCHAR(85) NOT NULL,
 );
 GO

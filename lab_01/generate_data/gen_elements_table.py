@@ -4,7 +4,7 @@ import docx
 from functools import reduce
 
 
-def gen_elements():
+def gen_elements_table():
     fieldnames = ['Id', 'ElementName', 'string_sertificate', 'id_sertificate']
     cell_end = []
     doc = docx.Document('DATAFILE.docx')

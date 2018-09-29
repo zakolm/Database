@@ -3,11 +3,12 @@ import csv
 
 
 def csv_writer(path, fieldnames, data):
-    """!
+    """
     Функция для записи в файл csv
-    path - путь до файла
-    fieldnames - название столбцов
-    data - список из списков
+    :param path: путь до файла
+    :param fieldnames: название столбцов
+    :param data: список из списков
+    :return: None
     """
     with open(path, "w", encoding='utf-16', newline='') as out_file:
         '''

@@ -7,7 +7,14 @@ from pdfminer.layout import LAParams
 import io
 
 
-def extend_in_one_database(data, rang, district):
+def union(data, rang, district):
+    """!
+    Объединение массивов в один мн. массив удобный для работы с csv-файлом
+    :param data:
+    :param rang:
+    :param district:
+    :return:
+    """
     csv = []
     col = 0
     region = ''
@@ -22,11 +29,23 @@ def extend_in_one_database(data, rang, district):
 
 
 def find_first_number(data):
+    """!
+    Поиск первого вхождения рейтинга в строке, экспортированной из pdf-файла
+    :param data: строка, экспортированная из pdf-файла
+    :return: место первого вхождения рейтинга в строке
+    """
     return min(data.index('1'), data.index('2'),
                data.index('3'), data.index('4'))
 
 
 def find_first_symbol(data, district):
+    """!
+    Поиск первого вхождения Административного Округа в строке,
+     экспортированной из pdf-файла
+    :param data: строка, экспортированная из pdf-файла
+    :param district: массив Административных Округов
+    :return: место первого вхождения Административного Округа в строке
+    """
     min_symb = len(data)
     for i in district:
         if i in data:
@@ -36,6 +55,12 @@ def find_first_symbol(data, district):
 
 
 def from_string_to_csv(data_from, district_db):
+    """!
+    Функция преобразует строку в мн. массив удобный для работы с csv-файлом
+    :param data_from: строка экспортированная из pdf-файла
+    :param district_db: мн. массив административных округов с их id
+    :return: мн. массив удобный для дальнейшей работы с CSV-файлом
+    """
     inner = dict(district_db)
     inner = dict(zip(inner.values(), inner.keys()))
     # First row
@@ -64,11 +89,16 @@ def from_string_to_csv(data_from, district_db):
     data_end = [x for x in data_end if x != '']
     rang = [x for x in rang if x != '']
     #
-    csv = extend_in_one_database(data_end, rang, inner)
+    csv = union(data_end, rang, inner)
     return csv
 
 
 def pdfparser(data):
+    """!
+
+    :param data:
+    :return:
+    """
     fp = open(data, 'rb')
     rsrcmgr = PDFResourceManager()
     retstr = io.StringIO()
@@ -84,14 +114,16 @@ def pdfparser(data):
     return data
 
 
-def gen_district_raiting_table(cell_of_district_db):
+def gen_area_table(district_table):
     """!
     Генерация таблицы рейтинга районов Москвы по экологии
+    :param district_table:
+    :return:
     """
     fieldnames = ['Id', 'AreaName', 'District', 'Rang']
-    data_string = pdfparser('example.pdf')
-    data_string.replace(',', '')
-    data_for_csv = from_string_to_csv(data_string, cell_of_district_db)
+    area_string = pdfparser('example.pdf')
+    area_string.replace(',', '')
+    data_for_csv = from_string_to_csv(area_string, district_table)
     for i in data_for_csv:
         i[1] = i[1].replace(',', '')
     return fieldnames, data_for_csv

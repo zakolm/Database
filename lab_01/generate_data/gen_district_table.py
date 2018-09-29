@@ -1,11 +1,10 @@
 # python3.6
 
 
-def gen_district_database():
+def gen_district_table():
     """!
     Генерация таблицы Административных округов Москвы
-    \param[in] None
-    \return fieldnames, district
+    :return: fieldnames, district
     """
     fieldnames = ['Id', 'DistrictName']
     district =\
