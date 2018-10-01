@@ -4,5 +4,5 @@
 
 | Number | Issued | Status | On GitHub | Exercise |
 |------|---|------|----------|---|
-| :one: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| :one: | :white_check_mark: | :white_check_mark: | :white_check_mark: | Создание базы данных и наполнение ее тестовыми данными |
 | :two: | :x: | :x: | :x: | :x: |
