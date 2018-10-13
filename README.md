@@ -10,7 +10,7 @@
 | Number | Issued | Status | On GitHub | Exercise |
 |------|---|------|----------|---|
 | :one: | :white_check_mark: | :white_check_mark: | :white_check_mark: | Создание базы данных и наполнение ее тестовыми данными |
-| :two: | :white_check_mark: | :x: | :x: | Для базы данных составить, отладить и проверить 25 инструкции обработки данных |
+| :two: | :white_check_mark: | :white_check_mark::x: | :white_check_mark::x: | Для базы данных составить, отладить и проверить 25 инструкции обработки данных |
 | :three: | :x: | :x: | :x: | :x: |
 | :four: | :x: | :x: | :x: | :x: |
 | :five: | :x: | :x: | :x: | :x: |
