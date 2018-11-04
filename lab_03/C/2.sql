@@ -1,0 +1,12 @@
+USE EcologyDB;
+GO
+
+IF OBJECT_ID ('Up', 'TR') IS NOT NULL
+   DROP TRIGGER Up;
+GO
+
+CREATE TRIGGER Up
+ON district
+AFTER INSERT, UPDATE 
+AS PRINT ('Insert smth');
+GO
