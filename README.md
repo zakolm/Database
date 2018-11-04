@@ -11,8 +11,8 @@
 |------|---|------|----------|---|
 | :one: | :white_check_mark: | :white_check_mark: | :white_check_mark: | Создание базы данных и наполнение ее тестовыми данными |
 | :two: | :white_check_mark: | :white_check_mark: | :white_check_mark: | Для базы данных составить, отладить и проверить 25 инструкции обработки данных |
-| :three: | :white_check_mark: | :x: | :x: | SQL модули: функции, процедуры и триггеры |
-| :four: | :x: | :x: | :x: | :x: |
+| :three: | :white_check_mark: | :White_check_mark: | :x: | SQL модули: функции, процедуры и триггеры |
+| :four: | :white_check_mark: | :x: | :x: | :x: |
 | :five: | :x: | :x: | :x: | :x: |
 | :six: | :x: | :x: | :x: | :x: |
 | :seven: | :x: | :x: | :x: | :x: |
