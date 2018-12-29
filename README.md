@@ -16,4 +16,4 @@
 | :five: | :white_check_mark: | :white_check_mark: | :x: | Из таблиц базы данных, созданной в ЛР №1, извлечь данные в XML-файл и проработать эти данные |
 | :six: | :white_check_mark: | :white_check_mark: :x: | :x: | :x: |
 | :seven: | :white_check_mark: | :x: | :x: | :x: |
-| :eight: | :white_check_mark: | :x: | :x: | :x: |
+| :eight: | :white_check_mark: | :white_check_mark: | :x: | :x: |
